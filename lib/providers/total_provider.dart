@@ -21,9 +21,6 @@ class TotalProvider extends ChangeNotifier {
   setTotal(double valor) {
     importTotal = valor; // Actualitzam valor provider
     Total.import = importTotal; // Guardam valor al SharedPreferences
-    print('in provider');
-    print(importTotal);
-
     notifyListeners();
   }
 }

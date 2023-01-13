@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:practica41/screens/screens.dart';
 import 'package:practica41/widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,8 +8,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('GastoBar'),
-        elevation: 0,
+        backgroundColor: Colors.black,
+        title: const Text('Control de Despeses'),
         actions: [
           IconButton(
               onPressed: () {
