@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:practica41/data/preus.dart';
 import 'package:practica41/providers/providers.dart';
 import 'package:provider/provider.dart';
 
@@ -17,15 +19,10 @@ class PreferencesScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 30.0),
         children: [
           _cafe(),
-          Divider(),
           _tallat(),
-          Divider(),
           _aigua(),
-          Divider(),
           _copa(),
-          Divider(),
           _menjar(),
-          Divider(),
           _snack(),
         ],
       ),
@@ -40,19 +37,27 @@ class PreferencesScreen extends StatelessWidget {
   }
 }
 
+// TextForms corresponents a cada producte.
+// No es poden introduir valor no numerics
+// En cas de deixar en blanc, salta el control d'excecions de Flutter (NO PETA)
+// A través de Regulat Expression, ha de ser un valor en format modena.
+
 Padding _cafe() {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: TextFormField(
-      // initialValue: Preferences.nom,
-      // onChanged: (value) {
-      //   Preferences.nom = value;
-      //   setState(() {});
-      // },
+      initialValue: Preus.cafe.toStringAsFixed(2),
+      onChanged: (value) {
+        Preus.cafe = double.parse(value);
+      },
       decoration: InputDecoration(
         labelText: 'Cafè',
         icon: Icon(Icons.coffee),
       ),
+      keyboardType: TextInputType.numberWithOptions(decimal: true),
+      inputFormatters: <TextInputFormatter>[
+        FilteringTextInputFormatter.allow(RegExp(r'^(\d+)?\.?\d{0,2}'))
+      ],
     ),
   );
 }
@@ -61,15 +66,18 @@ Padding _tallat() {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: TextFormField(
-      // initialValue: Preferences.nom,
-      // onChanged: (value) {
-      //   Preferences.nom = value;
-      //   setState(() {});
-      // },
+      initialValue: Preus.tallat.toStringAsFixed(2),
+      onChanged: (value) {
+        Preus.tallat = double.parse(value);
+      },
       decoration: InputDecoration(
         labelText: 'Tallat',
         icon: Icon(Icons.coffee_outlined),
       ),
+      keyboardType: TextInputType.numberWithOptions(decimal: true),
+      inputFormatters: <TextInputFormatter>[
+        FilteringTextInputFormatter.allow(RegExp(r'^(\d+)?\.?\d{0,2}'))
+      ],
     ),
   );
 }
@@ -78,15 +86,18 @@ Padding _copa() {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: TextFormField(
-      // initialValue: Preferences.nom,
-      // onChanged: (value) {
-      //   Preferences.nom = value;
-      //   setState(() {});
-      // },
+      initialValue: Preus.copa.toStringAsFixed(2),
+      onChanged: (value) {
+        Preus.copa = double.parse(value);
+      },
       decoration: InputDecoration(
         labelText: 'Copa',
         icon: Icon(Icons.wine_bar),
       ),
+      keyboardType: TextInputType.numberWithOptions(decimal: true),
+      inputFormatters: <TextInputFormatter>[
+        FilteringTextInputFormatter.allow(RegExp(r'^(\d+)?\.?\d{0,2}'))
+      ],
     ),
   );
 }
@@ -95,15 +106,18 @@ Padding _aigua() {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: TextFormField(
-      // initialValue: Preferences.nom,
-      // onChanged: (value) {
-      //   Preferences.nom = value;
-      //   setState(() {});
-      // },
+      initialValue: Preus.aigua.toStringAsFixed(2),
+      onChanged: (value) {
+        Preus.aigua = double.parse(value);
+      },
       decoration: InputDecoration(
         labelText: 'Aigua',
         icon: Icon(Icons.local_drink),
       ),
+      keyboardType: TextInputType.numberWithOptions(decimal: true),
+      inputFormatters: <TextInputFormatter>[
+        FilteringTextInputFormatter.allow(RegExp(r'^(\d+)?\.?\d{0,2}'))
+      ],
     ),
   );
 }
@@ -112,15 +126,18 @@ Padding _menjar() {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: TextFormField(
-      // initialValue: Preferences.nom,
-      // onChanged: (value) {
-      //   Preferences.nom = value;
-      //   setState(() {});
-      // },
+      initialValue: Preus.menjar.toStringAsFixed(2),
+      onChanged: (value) {
+        Preus.menjar = double.parse(value);
+      },
       decoration: InputDecoration(
         labelText: 'Menjar',
         icon: Icon(Icons.lunch_dining),
       ),
+      keyboardType: TextInputType.numberWithOptions(decimal: true),
+      inputFormatters: <TextInputFormatter>[
+        FilteringTextInputFormatter.allow(RegExp(r'^(\d+)?\.?\d{0,2}'))
+      ],
     ),
   );
 }
@@ -129,15 +146,18 @@ Padding _snack() {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 20),
     child: TextFormField(
-      // initialValue: Preferences.nom,
-      // onChanged: (value) {
-      //   Preferences.nom = value;
-      //   setState(() {});
-      // },
+      initialValue: Preus.snack.toStringAsFixed(2),
+      onChanged: (value) {
+        Preus.snack = double.parse(value);
+      },
       decoration: InputDecoration(
         labelText: 'Snack',
         icon: Icon(Icons.cookie),
       ),
+      keyboardType: TextInputType.numberWithOptions(decimal: true),
+      inputFormatters: <TextInputFormatter>[
+        FilteringTextInputFormatter.allow(RegExp(r'^(\d+)?\.?\d{0,2}'))
+      ],
     ),
   );
 }
