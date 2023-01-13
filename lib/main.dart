@@ -16,7 +16,6 @@ void main() async {
   // Colocam els providers a la arrel
   runApp(MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (_) => PreusProvider()),
       ChangeNotifierProvider(create: (_) => TotalProvider()),
     ],
     child: const MyApp(),
