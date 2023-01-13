@@ -15,9 +15,11 @@ class TotalAmount extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: size.height * 0.2,
+      padding: const EdgeInsets.all(10),
       color: Colors.black,
       child: FittedBox(
         child: Text(
+          //Import de la despesa, que agafa a través del provider
           Provider.of<TotalProvider>(context).importTotal.toStringAsFixed(2) +
               '€',
           style: TextStyle(color: Colors.white),

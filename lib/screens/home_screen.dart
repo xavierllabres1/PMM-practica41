@@ -18,14 +18,10 @@ class HomeScreen extends StatelessWidget {
               icon: const Icon(Icons.settings))
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ButtonsZone(),
-            TotalAmount(),
-          ],
-        ),
-      ),
+      body: ButtonsZone(),
+
+      bottomNavigationBar:
+          TotalAmount(), // Part inferior de la pantalla (despesa)
     );
   }
 }

@@ -14,16 +14,6 @@ class ButtonsZone extends StatelessWidget {
     //Variables de pantalla
     final size = MediaQuery.of(context).size;
 
-    //Variables
-    double preuCafe = Preus.cafe;
-    double preuTallat = Preus.cafe;
-    double preuAigua = Preus.cafe;
-    double preuCopa = Preus.cafe;
-    double preuMenjar = Preus.cafe;
-    double preuSnack = Preus.cafe;
-
-    double importTotal = Total.import;
-
     return Container(
       width: double.infinity,
       height: size.height * 0.7,
@@ -34,6 +24,7 @@ class ButtonsZone extends StatelessWidget {
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
         crossAxisCount: 2,
+        // Icones a la pantalla principal
         children: [
           _botoCafe(context),
           _botoTallat(context),

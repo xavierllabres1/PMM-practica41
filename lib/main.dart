@@ -28,13 +28,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'GastoBar',
-      initialRoute: 'home',
-      routes: {
-        'home': (BuildContext context) => HomeScreen(),
-        'preferences': (BuildContext context) => PreferencesScreen(),
-      },
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'GastoBar',
+        initialRoute: 'home',
+        routes: {
+          'home': (BuildContext context) => HomeScreen(),
+          'preferences': (BuildContext context) => PreferencesScreen(),
+        });
   }
 }
